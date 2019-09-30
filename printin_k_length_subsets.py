@@ -1,8 +1,9 @@
-used = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+used = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
 def can_partition(iterstart, array, used, k, current_Bucket_sum, target_bucket_sum):
-    if k == 1: return True
+    if k == 1:
+        return True
     if target_bucket_sum == current_Bucket_sum:
         return can_partition(0, array, used, k - 1, 0, target_bucket_sum)
 
@@ -26,4 +27,4 @@ def canpartition_ksubsets(array, k):
         return can_partition(0, array, used, k, 0, val // k) == True
 
 
-print(canpartition_ksubsets([4, 3, 2, 3, 5, 2, 1], 4))
+print(canpartition_ksubsets([4, 3, 2, 3, 5, 2, 4, 1], 4))
